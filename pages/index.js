@@ -16,7 +16,7 @@ export default function Home() {
           Welcome to KalDocs!
         </h1>
         <h3>
-        Documentation for Kalmai221's projects
+        Documentation for Kalmai221s projects
         </h3>
       </main>
 
