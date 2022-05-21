@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to KalDocs!
         </h1>
-        <h3 className={styles.title}>
+        <h3>
         Documentation for Kalmai221's projects
         </h3>
       </main>
