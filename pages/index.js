@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h1>
           Welcome to KalDocs!
         </h1>
         <h3>
@@ -21,7 +21,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-      Powered by KalAPI
+      <b>Powered by KalAPI</b>
       </footer>
     </div>
   )
