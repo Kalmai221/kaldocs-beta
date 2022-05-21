@@ -18,7 +18,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-      Powered by KalAPI
+      <b>Powered by KalAPI</b>
       </footer>
     </div>
   )
