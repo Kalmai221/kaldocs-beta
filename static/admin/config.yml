@@ -1,0 +1,254 @@
+backend:
+  name: git-gateway
+
+media_folder: static/media
+public_folder: static/media
+publish_mode: editorial_workflow
+display_url: https://discordsource.com
+
+collections:
+  - name: "themes" # Used in routes, e.g., /admin/collections/blog
+    label: "Themes" # Used in the UI
+    folder: "src/themes/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    delete: false
+    media_folder: "images/themes"
+    fields: # The fields for each document, usually in front matter
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        default: "{Theme Name}"
+
+      - label: "Author"
+        name: "author" 
+        widget: "string"
+        default: "{Author}"
+
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+        default: "A small excerpt."
+
+      - label: "Download URL"
+        name: "download"
+        widget: "string"
+
+      - label: "Github Source Url" 
+        name: "github_source_url"
+        widget: "string"
+        default: "https://github.com/..."
+        required: false
+
+      - label: "Gitlab Profile Url" 
+        name: "gitlab_profile_url"
+        widget: "string"
+        default: "https://gitlab.com/{Author}/"
+        required: false
+
+      - label: "Gitlab Source Url" 
+        name: "gitlab_source_url"
+        widget: "string"
+        default: "https://gitlab.com/..."
+        required: false
+
+      - label: "NPM Profile Url" 
+        name: "npm_profile_url"
+        widget: "string"
+        default: "https://npmjs.com/..."
+        required: false
+
+      - label: "NPM Source Url" 
+        name: "npm_source_url"
+        widget: "string"
+        default: "https://npmjs.com/..."
+        required: false
+
+      - label: "NPM Installation name"
+        name: "npm_i"
+        widget: "string"
+        required: false
+
+      - label: "Support URL"
+        name: "github_issue_url"
+        widget: "string"
+
+      - label: "Discord Server Invite URL"
+        name: "discord_server"
+        widget: "string"
+        default: "https://discordapp.com/invite/CODE"
+        required: false
+
+      - label: "Demo URL"
+        name: "demo"
+        widget: "string"
+        default: "https://rawcdn.githack.com/{Author}/{Repo}/master/"
+
+      - label: "Tags (Seperated by comma ',')" 
+        name: "tags"
+        widget: "list"
+        required: false
+
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "string"
+
+      - label: "Previews (Direct Links Only)"
+        name: "previews"
+        required: false
+        widget: "list"
+        default: ['https://imgur.com/upload/']
+      
+      - label: "Featured?"
+        name: "featured"
+        default: ""
+        widget: "boolean"
+
+      - label: "Auto Download?"
+        name: "auto"
+        widget: "boolean"
+
+      - label: "Status of your theme"
+        name: "status"
+        widget: "select"
+        options: ["Updated","Deprecated"]
+        default: ""
+        required: false
+
+      - label: "Style" 
+        name: "style"
+        widget: "select"
+        options: ["dark", "light"]
+        default: "dark"
+
+      - label: "Github Comment ID" 
+        name: "ghcommentid"
+        widget: "number"
+        required: false
+
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "product"
+
+      - label: "Publish Date"
+        name: "date" 
+        widget: "datetime"
+
+  - name: "plugins" # Used in routes, e.g., /admin/collections/blog
+    label: "Plugins" # Used in the UI
+    folder: "src/plugins/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    media_folder: "images/plugins"
+    delete: false
+    fields: # The fields for each document, usually in front matter
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        default: "{Plugin Name}"
+
+      - label: "Author"
+        name: "author" 
+        widget: "string"
+        default: "{Author}"
+
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+
+      - label: "Download URL"
+        name: "download"
+        widget: "string"
+        required: false
+
+      - label: "Github Source Url" 
+        name: "github_source_url"
+        widget: "string"
+        default: "https://github.com/..."
+        required: false
+
+      - label: "Gitlab Profile Url" 
+        name: "gitlab_profile_url"
+        widget: "string"
+        default: "https://gitlab.com/{Author}/"
+        required: false
+
+      - label: "Gitlab Source Url" 
+        name: "gitlab_source_url"
+        widget: "string"
+        default: "https://gitlab.com/..."
+        required: false
+
+      - label: "NPM Profile Url" 
+        name: "npm_profile_url"
+        widget: "string"
+        default: "https://npmjs.com/..."
+        required: false
+
+      - label: "NPM Source Url" 
+        name: "npm_source_url"
+        widget: "string"
+        default: "https://npmjs.com/..."
+        required: false
+
+      - label: "NPM Installation name"
+        name: "npm_i"
+        widget: "string"
+        required: false
+
+      - label: "Support URL"
+        name: "github_issue_url"
+        widget: "string"
+
+      - label: "Discord Server Invite URL"
+        name: "discord_server"
+        widget: "string"
+        default: "https://discordapp.com/invite/CODE"
+        required: false
+
+      - label: "Tags (Seperated by comma ',')" 
+        name: "tags"
+        widget: "list"
+        required: false
+        
+      - label: "Supported Software (Seperated by comma ',')" 
+        name: "software"
+        widget: "list"
+        default: ['BandagedBD','BetterDiscord']
+
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "string"
+        required: false
+
+      - label: "Previews (Direct Links Only)"
+        name: "previews"
+        required: false
+        widget: "list"
+        default: ['https://imgur.com/upload/']
+
+      - label: "Status of your plugin"
+        name: "status"
+        widget: "select"
+        options: ["Updated","Deprecated"]
+        default: ""
+        required: false
+
+      - label: "Auto Download?"
+        name: "auto"
+        widget: "boolean"
+
+      - label: "Github Comment ID" 
+        name: "ghcommentid"
+        widget: "number"
+        required: false
+
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "product"
+
+      - label: "Publish Date"
+        name: "date" 
+        widget: "datetime"
